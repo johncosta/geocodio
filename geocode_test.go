@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/stevepartridge/geocodio"
+	"github.com/johncosta/geocodio"
 )
 
 func TestGeocodeWithEmptyAddress(t *testing.T) {

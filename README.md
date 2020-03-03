@@ -1,6 +1,6 @@
 # geocodio
 
-[![GoDoc](https://godoc.org/github.com/stevepartridge/geocodio?status.svg)](https://godoc.org/github.com/stevepartridge/geocodio) [![Go Report Card](https://goreportcard.com/badge/github.com/stevepartridge/geocodio)](https://goreportcard.com/report/github.com/stevepartridge/geocodio)
+[![GoDoc](https://godoc.org/github.com/johncosta/geocodio?status.svg)](https://godoc.org/github.com/stevepartridge/geocodio) [![Go Report Card](https://goreportcard.com/badge/github.com/stevepartridge/geocodio)](https://goreportcard.com/report/github.com/stevepartridge/geocodio)
 
 Go client for [Geocodio](http://geocod.io) API v1
 
@@ -10,7 +10,7 @@ Go client for [Geocodio](http://geocod.io) API v1
 
 ```go
 import(
-  "github.com/stevepartridge/geocodio"
+  "github.com/johncosta/geocodio"
   "fmt"
 )
 
@@ -31,7 +31,7 @@ func main() {
 
 ```go
 import(
-  "github.com/stevepartridge/geocodio"
+  "github.com/johncosta/geocodio"
   "fmt"
 )
 

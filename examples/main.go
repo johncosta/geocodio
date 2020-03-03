@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/stevepartridge/geocodio"
+	"github.com/johncosta/geocodio"
 )
 
 func main() {
