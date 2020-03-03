@@ -1,3 +1,3 @@
-module github.com/stevepartridge/geocodio
+module github.com/johncosta/geocodio
 
 go 1.13
