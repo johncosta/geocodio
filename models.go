@@ -41,7 +41,7 @@ type Components struct {
 	City            string `json:"city"`
 	State           string `json:"state"`
 	Zip             string `json:"zip"`
-	County          string `json:"county"`
+	County          string `json:"county,omitempty"`
 	Country         string `json:"country"`
 	PreDirectional  string `json:"predirectional"`
 	Prefix          string `json:"prefix"`
