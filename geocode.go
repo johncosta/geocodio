@@ -3,6 +3,7 @@ package geocodio
 import (
 	"errors"
 	"strings"
+	"strconv"
 )
 
 // Geocode single address
@@ -17,6 +18,31 @@ func (g *Geocodio) Geocode(address string) (GeocodeResult, error) {
 		return GeocodeResult{}, err
 	}
 
+	return results, nil
+}
+
+// Geocode single address by component
+func (g *Geocodio) GeocodeByComponent(street string, city string, state string, postalCode string, country string, limit int, fields ...string) (GeocodeResult, error) {
+	if street == "" {
+		return GeocodeResult{}, errors.New("street must not be empty")
+	}
+	components := map[string]string{
+		"street":      street,
+		"city":        city,
+		"state":       state,
+		"postal_code": postalCode,
+		"country":     country,
+	}
+	if limit > 0 {
+		components["limit"] = strconv.Itoa(limit)
+	}
+	if len(fields) > 0 {
+		components["fields"] = strings.Join(fields, ",")
+	}
+	results, err := g.Call("/geocode", components)
+	if err != nil {
+		return GeocodeResult{}, err
+	}
 	return results, nil
 }
 
