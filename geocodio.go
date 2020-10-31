@@ -20,7 +20,9 @@ func NewGeocodio(apiKey string) (*Geocodio, error) {
 
 	newGeocodio := new(Geocodio)
 	newGeocodio.APIKey = apiKey
-
+	newGeocodio.client = &http.Client{
+		Timeout: 10 * time.Second,
+	}
 	return newGeocodio, nil
 }
 
