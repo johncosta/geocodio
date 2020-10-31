@@ -2,6 +2,8 @@ package geocodio
 
 import (
 	"errors"
+	"net/http"
+	"time"
 )
 
 const (
@@ -20,4 +22,17 @@ func NewGeocodio(apiKey string) (*Geocodio, error) {
 	newGeocodio.APIKey = apiKey
 
 	return newGeocodio, nil
+}
+
+// NewGeocodioWithClient is a helper to create new Geocodio pointer
+func NewGeocodioWithClient(apiKey string, client *http.Client) (*Geocodio, error) {
+	if client == nil {
+		client = &http.Client{
+			Timeout: 10 * time.Second,
+		}
+	}
+	newGeocodio, err := NewGeocodio(apiKey)
+	newGeocodio.client = client
+
+	return newGeocodio, err
 }

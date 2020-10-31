@@ -6,10 +6,8 @@ import (
 
 	// "fmt"
 	"io/ioutil"
-	"net/http"
 	"net/url"
 	"strings"
-	"time"
 )
 
 // Call uses basic (GET) method to make a request to the API
@@ -25,12 +23,7 @@ func (g *Geocodio) Call(path string, query map[string]string) (GeocodeResult, er
 		_url = _url + "&" + k + "=" + url.QueryEscape(v)
 	}
 
-	timeout := time.Duration(10 * time.Second)
-	client := http.Client{
-		Timeout: timeout,
-	}
-
-	resp, err := client.Get(_url)
+	resp, err := g.client.Get(_url)
 
 	if err != nil {
 		return GeocodeResult{}, err

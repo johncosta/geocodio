@@ -1,8 +1,11 @@
 package geocodio
 
+import "net/http"
+
 // Geocodio is the base struct
 type Geocodio struct {
 	APIKey string
+	client *http.Client
 }
 
 type Address struct {
